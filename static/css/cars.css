@@ -1,0 +1,131 @@
+body {
+  background-color: #221D23;
+  color: #D3F9B5;
+}
+
+.wrap {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.base {
+  background-color: #183A37;
+  max-height: 600px;
+  width: 720px;
+  padding: 5px;
+  border-radius: 10px;
+  border: solid 2px #DDB967;
+}
+
+.base > h3 {
+  text-align: center;
+}
+
+.list {
+  overflow: auto;
+  max-height: 500px;
+  scrollbar-color: #D1603D #60463B;
+  margin-top: 5px;
+}
+
+.messcont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.good {
+  border-radius: 5px;
+  background-color: #93f446;
+  color: #221D23;
+  border: 1px solid #5ad30b;
+  padding: 5px;
+  margin-bottom: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+.bad {
+  border-radius: 5px;
+  background-color: #ff9292;
+  color: #221D23;
+  border: 1px solid #ff3d3d;
+  padding: 5px;
+  margin-bottom: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+.delete, .search, .add {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+}
+
+.row {
+  background-color: #60463B;
+  border-radius: 5px;
+}
+
+form.sear, form.del, form.car_pars {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  margin: 10px;
+  background-color: #60463B;
+  color: #D3F9B5;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  border: solid 1px #DDB967;
+}
+
+a {
+  color: #D1603D;
+}
+
+.car {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.parid {
+  margin: 5px 5px;
+  width: 50px;
+  max-width: 100px;
+  text-align: left;
+}
+
+.parnum {
+  margin: 5px 5px;
+  width: 100px;
+}
+
+.parmod {
+  margin: 5px 5px;
+  width: 250px;
+}
+
+.parcol {
+  margin: 5px 5px;
+  width: 140px;
+}
+
+.paryea {
+  margin: 5px 5px;
+  width: 50px;
+}

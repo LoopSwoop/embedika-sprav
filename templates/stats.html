@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang=ru dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stats.css') }}">
+    <title>Статистика</title>
+  </head>
+  <body>
+    <section class="stats">
+      <h2>Статистика по базе</h2>
+      <p><strong>Всего записей:</strong> {{ stats['records'] }}.</p>
+      <p><strong>Представленные модели:</strong> {{ ', '.join(stats['models']) }}.</p>
+      <p><strong>Доступные цвета:</strong> {{ ', '.join(stats['colors']) }}.</p>
+      <p><strong>Доступные годы выпуска:</strong> {{ ', '.join(stats['years']) }}.</p>
+      <p>Вернуться на <a href="/">главную страницу</a>.</p>
+    </section>
+  </body>
+</html>

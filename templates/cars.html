@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cars.css') }}">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/cars.js') }}"></script>
+    <title>Справочник автомобилей</title>
+  </head>
+  <body>
+    <section class="wrap">
+        <h2>Справочник автомобилей</h2>
+        <h3>Список всех авто</h3>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              {% if category == 'error' %}
+                <div class="messcont">
+                  <div class="bad">{{ message }}</div>
+                </div>
+              {% endif %}
+              {% if category == 'success' %}
+                <div class="messcont">
+                  <div class="good">{{ message }}</div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <article class="base">
+          <div class="car row">
+            <div class="parid"><strong>id</strong></div>
+            <div class="parnum"><strong>Номер</strong></div>
+            <div class="parmod"><strong>Модель</strong></div>
+            <div class="parcol"><strong>Цвет</strong></div>
+            <div class="paryea"><strong>Год</strong></div>
+          </div>
+          <div class="list">
+            {% for car in cars['cars'] %}
+            <div class="car">
+              <div class="parid">
+                {{car['id']}}
+              </div>
+              <div class="parnum">
+                {{car['num']}}
+              </div>
+              <div class="parmod">
+                {{car['model']}}
+              </div>
+              <div class="parcol">
+                {{car['color']}}
+              </div>
+              <div class="paryea">
+                {{car['year']}}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </article>
+        {% include "search.html" %}
+        {% include "add.html" %}
+        {% include "delete.html" %}
+        <p>Для получения статистики по базе вы можете перейти по <a href="./stats/">ссылке</a>.</p>
+        <p>Вернуться на <a href="/">главную страницу</a>.</p>
+    </section>
+  </body>
+</html>
